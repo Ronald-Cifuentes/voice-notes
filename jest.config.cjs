@@ -13,15 +13,12 @@ module.exports = {
     },
   },
   transform: {
-    // '^.+\\.ts?$': 'ts-jest',
-    // '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.[t|j]sx?$': 'babel-jest',
-    '^.+\\.js$': 'babel-jest',
+    '\\.[jt]sx?$': 'babel-jest',
     '.+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleDirectories: ['node_modules', 'src'],
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   coverageReporters: ['lcov', 'text-summary'],
 }
